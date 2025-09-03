@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IoT Monitoring System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+      animation: fadeUp 1.2s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #4e54c8;
+    }
+
+    .btn-dashboard {
+      background-color: #4e54c8;
+      color: white;
+      border: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-dashboard:hover {
+      background-color: #3d42a1;
+      transform: scale(1.05);
+    }
+
+    #quoteBox {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #4e54c8;
+      min-height: 1.5em;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    ul.list-group li {
+      border-left: 4px solid #4e54c8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1 class="display-5">📡 Welcome to the IoT Monitoring System</h1>
+    <p class="lead mt-3">Track real-time sensor data with precision, speed, and elegance.</p>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title text-center">🔍 What is this Project?</h2>
+    <p class="text-center">
+      This system uses Raspberry Pi to collect data from multiple sensors and stores it in a secure database. Readings are updated every 60 seconds and visualized on a live dashboard.
+    </p>
+
+    <h2 class="section-title text-center">🔧 Sensors Used</h2>
+    <ul class="list-group list-group-flush mb-4">
+      <li class="list-group-item">🌡️ <strong>DHT11</strong> — Temperature & Humidity</li>
+      <li class="list-group-item">🔦 <strong>IR Sensor</strong> — Obstacle Detection</li>
+      <li class="list-group-item">📐 <strong>MPU6050</strong> — Accelerometer & Gyroscope</li>
+    </ul>
+
+    <h2 class="section-title text-center">💡 Quotes to Inspire</h2>
+    <blockquote class="blockquote text-center">
+      <p id="quoteBox">“If you can measure it, you can improve it.”</p>
+      <footer class="blockquote-footer">Auto Rotating</footer>
+    </blockquote>
+
+    <div class="text-center mt-4">
+      <h5>📊 Ready to dive into real-time sensor data?</h5>
+      <a href="/dashboard" class="btn btn-dashboard btn-lg mt-2">Go to Dashboard</a>
+    </div>
+  </div>
+
+  <footer class="text-center mt-5 mb-3">
+    Built by Ekansh • Modular. Scalable. Elegant.
+  </footer>
+
+  <script>
+    const quotes = [
+      "“If you can measure it, you can improve it.”",
+      "“Simplicity is the ultimate sophistication.”",
+      "“Innovation is seeing what everybody has seen and thinking what nobody has thought.”",
+      "“Data is not just numbers—it’s insight in disguise.”",
+      "“Precision drives progress.”"
+    ];
+
+    let i = 0;
+    setInterval(() => {
+      document.getElementById("quoteBox").innerText = quotes[i];
+      i = (i + 1) % quotes.length;
+    }, 5000);
+  </script>
+
+</body>
+</html>
